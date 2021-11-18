@@ -1,0 +1,18 @@
+.titres{
+    margin-left: 50px;
+    color:rgb(16, 16, 70);
+}
+
+.sous-titres{
+    color:rgb(71, 70, 70);
+    margin-left: 50px;
+    font-weight: normal;
+}
+
+.container{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: flex-end;   
+}
