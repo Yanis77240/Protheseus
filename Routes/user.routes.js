@@ -5,61 +5,25 @@ const userController = require("../Controllers/user.controller.js");
 const router = Router();
 
 //signup
-router.post('/signup', userController.signup);
+router.post("/signup", userController.signup);
 
 //login
-router.post('/login', userController.login);
+router.post("/login", userController.login);
 
 //Get all users
-router.get("/", async (req, res) => {
-	try {
-		const users = await User.find().exec();
-		res.status(200).json(users);
-	} catch (err) {
-		res.status(400).json({ error: err });
-	}
-});
+router.get("/", userController.getAll);
 
 //Get One
-router.get("/:id", getUser, (req, res) => {
-	res.json(res.user);
-});
+router.get("/:id", getUser, userController.getOne);
 
 //Delete One
-router.delete("/:id", getUser, async (req, res) => {
-	try {
-		await res.user.deleteOne();
-		res.json({ message: "User has been deleted" });
-	} catch (err) {
-		res.status(500).json({ message: err.message });
-	}
-});
+router.delete("/:id", getUser, userController.deleteOne);
 
 //Patch One
-router.patch("/:id", getUser, async (req, res) => {
-	if (req.body.firstname != null) {
-		res.user.firstname = req.body.firstname;
-	}
-	if (req.body.lastname != null) {
-		res.user.lastname = req.body.lastname;
-	}
-	try {
-		const updatedUser = await res.user.save();
-		res.json(updatedUser);
-	} catch (err) {
-		res.status(400).json({ message: err.message });
-	}
-});
+router.patch("/:id", getUser, userController.patchOne);
 
 //Put One
-router.put("/:id", getUser, async (req, res) => {
-	try {
-		const updatedUser = await res.user.set(req.body);
-		res.json(updatedUser);
-	} catch (err) {
-		res.status(400).json({ message: err.message });
-	}
-});
+router.put("/:id", getUser, userController.putOne);
 
 //getUser middleware
 async function getUser(req, res, next) {

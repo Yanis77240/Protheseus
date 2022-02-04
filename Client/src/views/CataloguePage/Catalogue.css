@@ -1,18 +1,34 @@
-.titres{
-    margin-left: 50px;
-    color:rgb(16, 16, 70);
+.header {
+	margin-top: 60px;
 }
 
-.sous-titres{
-    color:rgb(71, 70, 70);
-    margin-left: 50px;
-    font-weight: normal;
+.headerTitles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Lora", serif;
+	color: rgb(20, 20, 20);
 }
 
-.container{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: stretch;
-    align-content: flex-end;   
+.headerTitleSm {
+	position: absolute;
+	top: 18%;
+	font-size: 24px;
+}
+
+.headerTitleLg {
+	position: absolute;
+	top: 20%;
+	font-size: 100px;
+}
+
+.headerImg {
+	width: 100%;
+	height: 450px;
+	margin-top: 80px;
+	object-fit: cover;
+}
+
+.home {
+	display: flex;
 }

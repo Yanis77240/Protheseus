@@ -13,7 +13,6 @@ import InfoArea from "components/InfoArea/InfoArea.js";
 import styles2 from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import PageviewIcon from "@material-ui/icons/Pageview";
-import CreateIcon from "@material-ui/icons/Create";
 import ShareIcon from "@material-ui/icons/Share";
 
 const useStyles = makeStyles(styles);
@@ -25,16 +24,6 @@ export default function LandingPage(props) {
 
 	return (
 		<div>
-			<Header
-				color="transparent"
-				brand="Protheseus"
-				rightLinks={<HeaderLinks />}
-				fixed
-				changeColorOnScroll={{
-					height: 400,
-					color: "white",
-				}}
-			/>
 			<Parallax filter image={require("assets/img/bg7.jpg")}>
 				<div className={classes.container}>
 					<GridContainer>
@@ -47,7 +36,7 @@ export default function LandingPage(props) {
 								à un état de l'art poussé
 							</h4>
 							<br />
-							<Button color="danger" size="lg" href="/creer">
+							<Button color="danger" size="lg" href="/choose">
 								<i className="fas fa-play" />
 								Choisir sa prothèse
 							</Button>

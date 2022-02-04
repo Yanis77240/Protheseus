@@ -1,41 +1,36 @@
 const { Router } = require("express");
-const Annonce = require("../Models/prothese.model.js");
-const annonceController = require("../Controllers/prothese.controller.js");
+const Prothese = require("../Models/prothese.model.js");
+const protheseController = require("../Controllers/prothese.controller.js");
 
 const router = Router();
 
-router.post("/", annonceController.write);
+router.post("/", protheseController.write);
 
-//Get all annonces
-router.get("/", async (req, res) => {
-	try {
-		const annonces = await Annonce.find().exec();
-		res.status(200).json(annonces);
-	} catch (err) {
-		res.status(400).json({ error: err });
-	}
-});
+//Get All
+router.get("/", protheseController.getAll);
 
 //Get One
-router.get("/:id", getAnnonce, annonceController.one);
+router.get("/:id", getProthese, protheseController.getOne);
 
 //Delete One
-router.delete("/:id", getAnnonce, annonceController.delete);
+router.delete("/:id", getProthese, protheseController.deleteOne);
 
-//getannonce middleware
-async function getAnnonce(req, res, next) {
-	let annonce;
+//Put One
+router.put("/:id", getProthese, protheseController.putOne);
+
+//getProthese middleware
+async function getProthese(req, res, next) {
+	let prothese;
 	try {
-		annonce = await Annonce.findById(req.params.id);
-		if (annonce == null) {
-			return res.status(404).json({ message: "Cannot find Annonce" });
+		prothese = await Prothese.findById(req.params.id);
+		if (prothese == null) {
+			return res.status(404).json({ message: "Cannot find Prothese" });
 		}
 	} catch (err) {
 		return res.status(500).json({ message: err.message });
 	}
-	res.annonce = annonce;
+	res.prothese = prothese;
 	next();
 }
-
 
 module.exports = router;

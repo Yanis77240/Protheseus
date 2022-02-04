@@ -1,20 +1,23 @@
 {
-	"name": "finguide",
+	"name": "protheseus",
 	"version": "1.0.0",
 	"engines": {
 		"node": "10.x"
 	},
-	"description": "Fin'Guide Project - 2021",
+	"description": "Protheseus Project - 2021",
 	"main": "server.js",
 	"dependencies": {
 		"argon2": "^0.27.1",
 		"axios": "^0.21.1",
 		"cors": "^2.8.5",
+		"dotenv": "^11.0.0",
 		"express": "^4.17.1",
 		"expressjs": "^1.0.1",
 		"mongoose": "^5.11.16",
 		"morgan": "^1.10.0",
+		"multer": "^1.4.4",
 		"nodemon": "^2.0.7",
+		"path": "^0.12.7",
 		"react-player": "^2.9.0",
 		"validator": "^13.5.2"
 	},

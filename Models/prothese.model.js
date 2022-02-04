@@ -1,37 +1,48 @@
 const mongoose = require("mongoose");
 
-const annonceSchema = new mongoose.Schema(
+const protheseSchema = new mongoose.Schema(
 	{
-		title: {
+		type: {
+			require: true,
 			type: String,
+			unique: true,
 		},
-		device: {
+		author: {
 			type: String,
-		},
-		application: {
-			type: String,
-		},
-		height: {
-			type: Number,
-			required: [true, "Please provide a height"],
-		},
-		width: {
-			type: Number,
-			required: [true, "Please provide a width"],
+			required: true,
 		},
 		description: {
+			require: true,
 			type: String,
 		},
-		contact: {
+		pros: {
+			require: false,
+			type: Array,
+		},
+		cons: {
+			require: false,
+			type: Array,
+		},
+		char: {
+			require: false,
+			type: Array,
+		},
+		solutions: {
+			require: false,
+			type: Array,
+		},
+		photo: {
+			require: false,
 			type: String,
 		},
-		remove_pass: {
-			type: String,
+		comments: {
+			require: false,
+			type: Array,
 		},
 	},
 	{ timestamps: true }
 );
 
-const Annonce = mongoose.model("annonce", annonceSchema);
+const Prothese = mongoose.model("prothese", protheseSchema);
 
-module.exports = Annonce;
+module.exports = Prothese;

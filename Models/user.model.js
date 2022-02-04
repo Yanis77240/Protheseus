@@ -4,6 +4,11 @@ const argon2 = require("argon2");
 
 const userSchema = new mongoose.Schema(
 	{
+		username: {
+			type: String,
+			required: true,
+			unique: true,
+		},
 		email: {
 			type: String,
 			required: [true, "email is required, please enter an email"],
@@ -15,34 +20,10 @@ const userSchema = new mongoose.Schema(
 			required: [true, "password is required, please enter a password"],
 			minlength: [6, "password must be longer than 6 characters"],
 		},
-		firstname: {
-		 	type: String,
-		 	required: [true, "First name is required, please enter a first name"],
+		admin: {
+			type: Boolean,
+			default: false,
 		},
-		lastname: {
-		 	type: String,
-		 	required: [true, "Last name is required, please enter a last name"],
-		},
-		address: {
-			type: String,
-			required: [true, "Address is required, please enter an address"],
-	   	},
-		city: {
-			type: String,
-	   	},
-		region: {
-			type: String,
-	   	},
-		postal_code: {
-			type: Number,
-	   	},
-		country: {
-			type: String,
-	   	},
-		number: {
-			type: Number,
-			required: [true, "Number is required, please enter a number"],
-	   	},
 	},
 	{ timestamps: true }
 );

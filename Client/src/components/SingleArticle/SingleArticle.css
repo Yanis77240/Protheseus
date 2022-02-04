@@ -1,0 +1,108 @@
+.singleArticle {
+	flex: 9;
+}
+
+.singleArticleWrapper {
+	padding: 20px;
+	padding-right: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.singleArticleImg {
+	width: 100%;
+	height: 300px;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+.singleArticleTitle {
+	text-align: center;
+	margin: 10px;
+	font-family: "Lora", serif;
+	font-size: 28px;
+}
+
+.singleArticleTitleInput {
+	margin: 10px;
+	font-family: "Lora", serif;
+	font-size: 28px;
+	text-align: center;
+	border: none;
+	color: gray;
+	border-bottom: 1px solid lightgray;
+}
+
+.singleArticleTitleInput:focus {
+	outline: none;
+}
+
+.singleArticleEdit {
+	float: right;
+	font-size: 16px;
+}
+
+.singleArticleIcon {
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.singleArticleIcon:first-child {
+	color: teal;
+}
+.singleArticleIcon:last-child {
+	color: tomato;
+}
+
+.singleArticleInfo {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	font-family: "Varela Round", sans-serif;
+	color: #b39656;
+}
+
+.singleArticleAuthor {
+	margin-left: 5px;
+}
+
+.singleArticleDesc {
+	color: #666;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.singleArticleDesc::first-letter {
+	margin-left: 20px;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.singleArticleDescInput {
+	border: none;
+	color: #666;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.singleArticleDescInput:focus {
+	outline: none;
+}
+
+.singleArticleButton {
+	width: 100px;
+	border: none;
+	background-color: teal;
+	padding: 5px;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	align-self: flex-end;
+	margin-top: 20px;
+}
+
+.comments {
+	padding: 20px;
+	padding-right: 0;
+}
